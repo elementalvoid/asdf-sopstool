@@ -34,14 +34,14 @@ install() {
   local bin_path="${install_path}/sopstool"
 
   local download_url
-  download_url="https://github.com/ibotta/sopstool/releases/download/${version}/sopstool_${platform}.tar.gz"
+  download_url="https://github.com/ibotta/sopstool/releases/download/${version}/sopstool_${platform}_${arch}.tar.gz"
 
   mkdir -p "${install_path}"
 
   cd ${tmp_dir}
   echo "Downloading sopstool from ${download_url}"
-  curl -sL "$download_url" -o "${tmp_dir}/sopstool_${platform}_${version}.tar.gz"
-  tar -xzf ${tmp_dir}/sopstool_${platform}_${version}.tar.gz
+  curl -sL "$download_url" -o "${tmp_dir}/sopstool_${platform}_${arch}_${version}.tar.gz"
+  tar -xzf ${tmp_dir}/sopstool_${platform}_${arch}_${version}.tar.gz
   mv ${tmp_dir}/sopstool ${bin_path}
   chmod +x "${bin_path}"
 }
